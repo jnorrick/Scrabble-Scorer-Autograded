@@ -17,6 +17,25 @@ const vowelPointStructure = {
 	3: ['A', 'E', 'I', 'O', 'U']
 };
 
+const simpleScorerObject = {
+	name: "Simple Score",
+	description: "Each letter is worth 1 point.",
+	scoringFunction: function simpleScorer() {}
+};
+
+const vowelBonusScorerObject = {
+	name: "Bonus Vowel",
+	description: "Vowels are 3 pts, consonants are 1 pt.",
+	scoringFunction: function vowelBonusScorer() {}
+}
+
+const oldScrabbleScorerObject = {
+	name:"Scrabble",
+	description:"The traditional scoring algorithm.",
+	scoringFunction: function oldScrabbleScorer() {}
+}
+
+
 function oldScrabbleScorer(word) {
 	word = word.toUpperCase();
 	let letterPoints = "";
@@ -64,7 +83,7 @@ function vowelBonusScorer(word) {
 
 let scrabbleScorer;
 
-const scoringAlgorithms = [simpleScorer, vowelBonusScorer, oldScrabbleScorer];
+const scoringAlgorithms = [simpleScorerObject, vowelBonusScorerObject, oldScrabbleScorer];
 
 function scorerPrompt() {
 	console.log("Which scoring algorithm would you like to use? \n\n 0 - Simple: One point per character. \n 1 - Vowel Bonus: Vowels are worth 3 points. \n 2 - Scrabble: Uses scrabble point system." )
