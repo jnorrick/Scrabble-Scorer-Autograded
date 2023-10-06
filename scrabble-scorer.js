@@ -18,22 +18,22 @@ const vowelPointStructure = {
 };
 
 const simpleScorerObject = {
-	name: "Simple Score",
-	description: "Each letter is worth 1 point",
-	scoringFunction: simpleScorer
+	// name: "Simple Score",
+	// description: "Each letter is worth 1 point",
+	scorerFunction: simpleScorer
 };
 
 const vowelBonusScorerObject = {
-	name: "Bonus Vowel",
-	description: "Vowels are 3 pts, consonants are 1 pt",
-	scoringFunction: vowelBonusScorer
+	// name: "Bonus Vowel",
+	// description: "Vowels are 3 pts, consonants are 1 pt",
+	scorerFunction: vowelBonusScorer
 };
 
 
 const oldScrabbleScorerObject = {
-	name:"Scrabble",
-	description:"The traditional scoring algorithm",
-	scoringFunction: oldScrabbleScorer
+	// name:"Scrabble",
+	// description:"The traditional scoring algorithm",
+	scorerFunction: oldScrabbleScorer
 };
 
 
@@ -105,8 +105,8 @@ let newPointStructure;
 function runProgram() {
 	let inputWord = initialPrompt();// input string from user ex: "happy"
 	let inputIndex = scorerPrompt(); // input of either 0, 1, or 2 from user
-	let selectedAlgorithm = scoringAlgorithms[inputIndex]
-	let results = selectedAlgorithm.scoringFunction(inputWord); 
+	let selectedAlgorithm = scoringAlgorithms[inputIndex] //selects one of 3 scoring algorithms
+	let results = selectedAlgorithm.scorerFunction(inputWord); //selects the scoring function with input from selected item in array
 }
 
 // Don't write any code below this line //
