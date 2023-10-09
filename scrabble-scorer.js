@@ -97,43 +97,27 @@ function scorerPrompt() {
 }
 
 
+function transform(oldPointStructure) {
+	let newPointStructure = {}
+	for (let key in oldPointStructure){
+		let value = oldPointStructure[key]
+		for (let letterIndex in value) {
+			let letter = value[letterIndex].toLowerCase()
+			newPointStructure[letter] = Number(key)
+		}
+	}
+	return newPointStructure
+}
 
-function transform() {};
+let newPointStructure = transform(oldPointStructure)
 
-let newPointStructure = {
-	"a": 1,
-    "b": 3,
-    "c": 3,
-    "d": 2,
-    "e": 1,
-    "f": 4,
-    "g": 2,
-    "h": 4,
-	"i": 1,
-    "j": 8,
-    "k": 5,
-    "l": 1,
-    "m": 3,
-    "n": 1,
-    "o": 1,
-    "p": 3,
-    "q": 10,
-    "r": 1,
-    "s": 1,
-    "t": 1,
-	"u": 1,
-    "v": 4,
-    "w": 4,
-    "x": 8,
-    "y": 4,
-    "z": 10,
-};
+
 
 function runProgram() {
-	let inputWord = initialPrompt();// input string from user ex: "happy"
-	let inputIndex = scorerPrompt(); // input of either 0, 1, or 2 from user
-	let selectedAlgorithm = scoringAlgorithms[inputIndex] //selects one of 3 scoring algorithms
-	let results = selectedAlgorithm.scorerFunction(inputWord); //selects the scoring function with input from selected item in array
+		// let inputWord = initialPrompt();// input string from user ex: "happy"
+	// let inputIndex = scorerPrompt(); // input of either 0, 1, or 2 from user
+	// let selectedAlgorithm = scoringAlgorithms[inputIndex] //selects one of 3 scoring algorithms
+	// let results = selectedAlgorithm.scorerFunction(inputWord); //selects the scoring function with input from selected item in array
 }
 
 // Don't write any code below this line //
